@@ -62,11 +62,10 @@ function generarNumeroSecreto() {
     console.log(listaNumerosSorteados);
     //si ya sorteamos todos los numeros
     if (listaNumerosSorteados.length == numeroMaximo) {
-        //se reinicia el juego
-        reiniciarJuego();
-        listaNumerosSorteados=[];
-        asignarTextoElemento('p','Ya se sortearon todos los números posibles');
-
+        asignarTextoElemento('p','Ya se sortearon todos los números posibles, el juego se reinicia');
+        asignarTextoElemento('p', `Indica el número del 1 al ${numeroMaximo}`);
+        listaNumerosSorteados = [];
+        return generarNumeroSecreto(); // Generar un nuevo número secreto
     } else{
     //si el numero generado esta incluido en la lista    
     if (listaNumerosSorteados.includes(numeroGenerado)){
